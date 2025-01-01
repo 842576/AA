@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="仓库管理系统.Views.MainView"
+                 xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                 xmlns:local="clr-namespace:仓库管理系统.Views"
+                 xmlns:hc="https://handyorg.github.io/handycontrol" 
+              xmlns:vm="clr-namespace:仓库管理系统.ViewModels"  
+                d:DataContext="{d:DesignInstance vm:MainViewModel}"
+                 
+            
+                 mc:Ignorable="d" 
+                 FontSize="20"
+                 Background="White"
+                 d:DesignHeight="980" d:DesignWidth="1900">
+   
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Background="#374054">
+            <TextBlock Text="✪" FontSize="50">
+                <TextBlock.Foreground>
+                    <LinearGradientBrush>
+                        <GradientStop Offset="0" Color="#C1CADC"/>
+                        <GradientStop Offset="1" Color="#FFFFFF"/>
+                    </LinearGradientBrush>
+                </TextBlock.Foreground>
+            </TextBlock>
+
+            <RadioButton Content="首页" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"
+                             Command="{Binding NavigationCommand}"
+                             CommandParameter="IndexView"/>
+            <RadioButton Content="物资管理" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"
+                             Command="{Binding NavigationCommand}"
+                             CommandParameter="CargoView"/>
+            <RadioButton Content="仓库设置" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+            <RadioButton Content="库位管理" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+            <RadioButton Content="客户管理" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+            <RadioButton Content="供应商管理" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+            <RadioButton Content="物资入库" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+            <RadioButton Content="物资出库" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+            <RadioButton Content="入库查询" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+            <RadioButton Content="出库查询" Tag="☆" Style="{StaticResource RadioButtonMenuStyle}"/>
+
+        </StackPanel>
+    
+        <ContentControl x:Name="mainRegion" Grid.Column="1"/>
+    </Grid>
+</UserControl>
